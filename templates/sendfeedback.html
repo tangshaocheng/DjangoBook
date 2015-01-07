@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Bootstrap core CSS -->
+     <link type="text/css"
+          href="{% static "bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link type="text/css"
+          href="{% static "baoming.css" %}" rel="stylesheet">
+      <script type="text/javascript">
+        function countDown(secs,surl){
+            var jumpTo = document.getElementById('jumpTo');
+            jumpTo.innerHTML=secs;
+            if(--secs>0){
+            setTimeout("countDown("+secs+",'"+surl+"')",1000);
+            }
+            else{
+                location.href=surl;
+                }
+            }
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+        <h1 style="color: lightpink
+     ">发送成功！感谢参与!</h1>
+        <h3><span id="jumpTo">3</span>秒后自动跳转到主页</h3>
+    </div>
+
+    <script type="text/javascript">countDown(3,'http://127.0.0.1:8000/');</script>
+  </body>
+</html>

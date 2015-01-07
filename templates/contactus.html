@@ -1,0 +1,77 @@
+{% extends "base1.html" %}
+{% load staticfiles %}
+{% block title %}联系我们{% endblock %}
+
+<body class="{% block bodyclass %}login tooltips{% endblock %}">
+    {% block content %}
+        <div class="login-header text-center">
+			<img src="{% static "assets/img/logo-login.png" %}" class="logo" alt="Logo">
+		</div>
+
+			<form action="/contactus/" role="form" method="post">
+            {% csrf_token %}
+				<!-- BEGIN MAIL APPS NEW MAIL -->
+					<div class="mail-apps-wrap">
+						<div class="the-box bg-success no-border no-margin heading">
+							<div class="row">
+								<div class="col-sm-6">
+									<h1><i class="fa fa-envelope icon-lg icon-circle icon-bordered"></i>给我们发邮件</h1>
+								</div><!-- /.col-sm-6 -->
+
+							</div><!-- /.row -->
+						</div>
+
+						<div class="the-box toolbar no-border no-margin">
+							<div class="btn-toolbar" role="toolbar">
+								<div class="btn-group">
+									<a href="/" class="btn btn-danger"><i class="fa fa-arrow-left"></i>回主页</a>
+								</div>
+
+
+							</div><!-- /.btn-toolbar -->
+						</div><!-- /.the-box -->
+
+						<div class="the-box no-margin">
+							<form role="form">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label>收件人</label>
+											<input placeholder="shuilikexie@163.com" class="form-control"  readonly>
+                                               {% csrf_token %}
+
+										</div>
+										<div class="form-group">
+											<label>我的邮箱</label>
+											<input placeholder="正确输入才能收到回复哦。。。" name="fromemail" type="email" class="form-control" >
+										</div>
+
+
+									</div><!-- /.col-sm-4 -->
+									<div class="col-sm-8">
+										<div class="form-group">
+											<label>主题</label>
+											<input type="text" class="form-control input-lg" name="subject" placeholder="求联系...">
+										</div><!-- /.input-group -->
+										<div class="form-group">
+											<textarea class="summernote-sm" name="content"></textarea>
+										</div><!-- /.input-group -->
+                                        <div class="form-group">
+									<button type="submit" class="btn btn-success"><i class="fa fa-rocket"></i>发送</button>
+
+								</div>
+									</div><!-- /.col-sm-8 -->
+								</div><!-- /.row -->
+
+							</form>
+						</div><!-- /.the-box -->
+					</div><!-- /.mail-apps-wrap -->
+					<!-- END MAIL APPS NEW MAIL -->
+			</form>
+
+
+
+
+
+    {% endblock %}
+</body>>
