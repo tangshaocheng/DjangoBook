@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 from mysite.forms import ContactForm
 import datetime
+from django.template import loader
 # Create your views here.
 
 
@@ -21,7 +22,7 @@ def my_homepage_view(request):
 @csrf_exempt
 def join(request):
     JoinMe.objects.create(fullname=request.POST['fullname'], email=request.POST['email'], myclass=request.POST['myclass'],
-                         project=request.POST['project'], describe=request.POST['describe'])
+                         project=request.POST['project'], describe=request.POST['describe'], status='1')
 
     return render_to_response('thanks.html')
 
@@ -103,6 +104,17 @@ def contact(request):
                 initial={'subject': 'I love your site!'}
             )
     return render_to_response('contact_form.html', {'form': form})
+
+
+@csrf_exempt
+def contactus(request):
+    if request.method == 'POST':
+        message = request.POST['fromemail'] + "  " + request.POST['content']
+
+        send_mail(request.POST['subject'], message, '654543782@qq.com', ['shuilikexie@163.com'], fail_silently=False)
+        return render_to_response('sendfeedback.html')
+    else:
+        return render_to_response('contactus.html')
 
 
 def hello(request):
