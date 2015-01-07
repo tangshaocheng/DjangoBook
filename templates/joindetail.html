@@ -1,0 +1,41 @@
+{% extends "base1.html" %}
+{% load staticfiles %}
+{% block title %}报名详情{% endblock %}
+
+<body class="{% block bodyclass %}login tooltips{% endblock %}">
+    {% block content %}
+                 <div class="form-group">
+                   <a href="/joinform/"> <button type="button" class="btn btn-warning btn-lg btn-perspective btn-block" >现在去报名</button></a>
+				</div>
+			</form>
+				<h4 class="small-title" style="color: #ffffff">报名名单</h4>
+					<div class="the-box full no-border">
+						<div class="table-responsive">
+							<table class="table table-th-block">
+								<thead>
+									<tr>
+                                        <th style="width: 50px;">编号</th>
+                                        <th>姓名</th>
+                                        <th>班级</th>
+                                        <th>email</th>
+                                        <th>活动项目</th>
+                                    </tr>
+								</thead>
+								<tbody>
+                                    {% for d in j %}
+                                        <tr>
+                                        <td>1</td>
+                                        <td>{{ d.fullname }}</td>
+                                        <td>{{ d.myclass }}</td>
+                                        <td>{{ d.email }}</td>
+                                        <td>{{ d.project }}</td>
+                                    </tr>
+                                    {% endfor %}
+
+								</tbody>
+							</table>
+						</div><!-- /.table-responsive -->
+					</div><!-- /.the-box -->
+
+    {% endblock %}
+</body>>

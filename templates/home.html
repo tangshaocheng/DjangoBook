@@ -1,0 +1,456 @@
+{% extends "base1.html" %}
+{% load staticfiles %}
+{% block title %}主页{% endblock %}
+
+<body class="{% block bodyclass %}tooltips{% endblock %}">
+    {% block content %}
+        <!-- BEGIN PANEL DEMO -->
+		<div class="box-demo">
+			<div class="inner-panel">
+				<div class="cog-panel" id="demo-panel"><i class="fa fa-cog fa-spin"></i></div>
+				<p class="text-muted small text-center">COLOR SCHEMES</p>
+				<div class="row text-center">
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Default" id="color-reset">
+							<div class="half-tiles bg-dark"></div>
+							<div class="half-tiles bg-dark"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Light" id="change-color-light">
+							<div class="half-tiles bg-white"></div>
+							<div class="half-tiles bg-white"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Primary dark" id="change-primary-dark">
+							<div class="half-tiles bg-primary"></div>
+							<div class="half-tiles bg-dark"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Info dark" id="change-info-dark">
+							<div class="half-tiles bg-info"></div>
+							<div class="half-tiles bg-dark"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Success dark" id="change-success-dark">
+							<div class="half-tiles bg-success"></div>
+							<div class="half-tiles bg-dark"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Danger dark" id="change-danger-dark">
+							<div class="half-tiles bg-danger"></div>
+							<div class="half-tiles bg-dark"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Warning dark" id="change-warning-dark">
+							<div class="half-tiles bg-warning"></div>
+							<div class="half-tiles bg-dark"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Primary light" id="change-primary-light">
+							<div class="half-tiles bg-primary"></div>
+							<div class="half-tiles bg-white"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Info light" id="change-info-light">
+							<div class="half-tiles bg-info"></div>
+							<div class="half-tiles bg-white"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Success light" id="change-success-light">
+							<div class="half-tiles bg-success"></div>
+							<div class="half-tiles bg-white"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Danger light" id="change-danger-light">
+							<div class="half-tiles bg-danger"></div>
+							<div class="half-tiles bg-white"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="xs-tiles" data-toggle="tooltip" title="Warning light" id="change-warning-light">
+							<div class="half-tiles bg-warning"></div>
+							<div class="half-tiles bg-white"></div>
+						</div>
+					</div>
+				</div>
+				<button class="btn btn-block btn-primary btn-sm" id="btn-reset">Reset to default</button>
+			</div>
+		</div>
+		<!-- END PANEL DEMO -->
+
+
+
+
+		<!--
+		===========================================================
+		BEGIN PAGE
+		===========================================================
+		-->
+		<div class="wrapper">
+			<!-- BEGIN TOP NAV -->
+			<div class="top-navbar">
+				<div class="top-navbar-inner">
+
+					<!-- Begin Logo brand -->
+					<div class="logo-brand">
+						<a href="/index"><img src="{% static "assets/img/sentir-logo-primary.png" %}" alt="Sentir logo"></a>
+					</div><!-- /.logo-brand -->
+					<!-- End Logo brand -->
+
+					<div class="top-nav-content">
+
+						<!-- Begin button sidebar left toggle -->
+						<div class="btn-collapse-sidebar-left">
+							<i class="fa fa-long-arrow-right icon-dinamic"></i>
+						</div><!-- /.btn-collapse-sidebar-left -->
+						<!-- End button sidebar left toggle -->
+
+						<!-- Begin button sidebar right toggle -->
+						<div class="btn-collapse-sidebar-right">
+							<i class="fa fa-bullhorn"></i>
+						</div><!-- /.btn-collapse-sidebar-right -->
+						<!-- End button sidebar right toggle -->
+
+						<!-- Begin button nav toggle -->
+						<div class="btn-collapse-nav" data-toggle="collapse" data-target="#main-fixed-nav">
+							<i class="fa fa-plus icon-plus"></i>
+						</div><!-- /.btn-collapse-sidebar-right -->
+						<!-- End button nav toggle -->
+
+
+						<!-- Begin user session nav -->
+						<ul class="nav-user navbar-right">
+							<li class="dropdown">
+							  <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="{% static "assets/img/avatar/avatar-1.jpg" %}" class="avatar img-circle" alt="Avatar">
+							  </a>
+							  <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
+
+								<li><a href="//">注销</a></li>
+							  </ul>
+							</li>
+						</ul>
+						<!-- End user session nav -->
+
+						<!-- Begin Collapse menu nav -->
+						<div class="collapse navbar-collapse" id="main-fixed-nav">
+
+							<ul class="nav navbar-nav navbar-left">
+
+
+
+
+							</ul>
+						</div><!-- /.navbar-collapse -->
+						<!-- End Collapse menu nav -->
+					</div><!-- /.top-nav-content -->
+				</div><!-- /.top-navbar-inner -->
+			</div><!-- /.top-navbar -->
+			<!-- END TOP NAV -->
+
+
+
+
+
+
+
+			<!-- BEGIN SIDEBAR RIGHT HEADING -->
+			<div class="sidebar-right-heading">
+				<ul class="nav nav-tabs square nav-justified">
+				  <li class="active"><a href="#online-user-sidebar" data-toggle="tab"><i class="fa fa-comments"></i></a></li>
+				  <li><a href="#notification-sidebar" data-toggle="tab"><i class="fa fa-bell"></i></a></li>
+				  <li><a href="#task-sidebar" data-toggle="tab"><i class="fa fa-tasks"></i></a></li>
+				  <li><a href="#setting-sidebar" data-toggle="tab"><i class="fa fa-cogs"></i></a></li>
+				</ul>
+			</div><!-- /.sidebar-right-heading -->
+			<!-- END SIDEBAR RIGHT HEADING -->
+
+
+
+			<!-- BEGIN SIDEBAR RIGHT -->
+			<div class="sidebar-right sidebar-nicescroller">
+				<div class="tab-content">
+				  <div class="tab-pane fade in active" id="online-user-sidebar">
+					<ul class="sidebar-menu online-user">
+
+					</ul>
+				  </div>
+				  <div class="tab-pane fade" id="notification-sidebar">
+					<ul class="sidebar-menu sidebar-notification">
+
+
+
+
+						<li class="static text-center"><button class="btn btn-primary btn-sm">See all notifications</button></li>
+					</ul>
+				  </div>
+				  <div class="tab-pane fade" id="task-sidebar">
+					<ul class="sidebar-menu sidebar-task">
+						<li class="static">UNCOMPLETED</li>
+
+
+
+
+
+						<li class="static">COMPLETED</li>
+
+
+
+
+
+						<li class="static text-center"><button class="btn btn-success btn-sm">See all tasks</button></li>
+					</ul>
+				  </div><!-- /#task-sidebar -->
+				  <div class="tab-pane fade" id="setting-sidebar">
+					<ul class="sidebar-menu">
+						<li class="static">ACCOUNT SETTING</li>
+
+						<!--<li class="text-content">
+							<div class="switch">
+								<div class="onoffswitch blank">
+									<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="logmessages">
+									<label class="onoffswitch-label" for="logmessages">
+										<span class="onoffswitch-inner"></span>
+										<span class="onoffswitch-switch"></span>
+									</label>
+								</div>
+							</div>
+							Log all message
+						</li>-->
+					</ul>
+				  </div><!-- /#setting-sidebar -->
+				</div><!-- /.tab-content -->
+			</div><!-- /.sidebar-right -->
+			<!-- END SIDEBAR RIGHT -->
+
+
+
+			<!-- BEGIN PAGE CONTENT -->
+			<div class="page-content">
+
+
+				<div class="container-fluid">
+					<!-- Begin page heading -->
+					<h1 class="page-heading">我的主页 <small>————这个家伙很懒，什么都没留下</small></h1>
+					<!-- End page heading -->
+
+					<!-- Begin breadcrumb -->
+					<ol class="breadcrumb default square rsaquo sm">
+						<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+
+					</ol>
+					<!-- End breadcrumb -->
+
+					<div class="row">
+						<div class="col-md-8">
+							<!-- BEGIN PROFILE HEADING -->
+							<div class="the-box transparent full no-margin profile-heading">
+								<div class="right-action">
+
+								</div><!-- /.right-action -->
+								<img src="{% static "assets/img/photo/wide/img-2.jpg" %}" class="bg-cover" alt="Image">
+								<img src="{% static "assets/img/avatar/avatar-1.jpg" %}" class="avatar" alt="Avatar">
+								<div class="profile-info">
+									<p class="user-name">{{ u.fullname }}</p>
+									<p class="text-muted">  <a href="#fakelink"></a></p>
+									<p class="text-muted"> <a href="#fakelink"></a></p>
+									<p class="right-button">
+
+									</p>
+								</div><!-- /.profile-info -->
+							</div><!-- /.the-box .transparent .profile-heading -->
+							<!-- END PROFILE HEADING -->
+
+							<div class="panel with-nav-tabs panel-primary panel-square panel-no-border">
+							  <div class="panel-heading">
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#panel-home" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+									<li><a href="#panel-about" data-toggle="tab"><i class="fa fa-user"></i></a></li>
+
+								</ul>
+							  </div>
+								<div id="panel-collapse-1" class="collapse in">
+									<div class="panel-body">
+										<div class="tab-content">
+											<div class="tab-pane fade in active" id="panel-home">
+												<h4 class="small-heading more-margin-bottom">活动</h4>
+												<ul class="media-list media-xs">
+												  <li class="media">
+                                                      {% for a in ac %}
+													<a class="pull-left" href="/joinform" target="_blank">
+													  <button class="btn btn-primary btn-sm" >去报名</button>
+													</a>
+													<div class="media-body">
+													  <h4 class="media-heading">{{ a.title }}</h4>
+													  <p class="date"><small>发布时间:{{ a.create_time }}</small></p>
+													  <p class="small">
+													    {{ a.describe }}
+													  </p>
+													</div>
+                                                      {% endfor %}
+												  </li>
+
+
+
+
+												</ul>
+											</div>
+											<div class="tab-pane fade" id="panel-about">
+												<h4 class=  "small-heading more-margin-bottom">我的信息</h4>
+												<form class="form-horizontal" role="form">
+
+												<div class="form-group">
+													<label class="col-sm-2 control-label">姓名</label>
+													<div class="col-sm-10">
+													  <p class="form-control-static">{{ u.fullname }}</p>
+													</div>
+												</div><!-- /.form-group -->
+												<div class="form-group">
+													<label class="col-sm-2 control-label">邮箱</label>
+													<div class="col-sm-10">
+													  <p class="form-control-static">{{ u.email }}</p>
+													</div>
+												</div><!-- /.form-group -->
+
+												<div class="form-group">
+													<label class="col-sm-2 control-label">学校</label>
+													<div class="col-sm-10">
+													  <p class="form-control-static"><a href="#fakelink">清华大学</a></p>
+													</div>
+												</div><!-- /.form-group -->
+												<div class="form-group">
+													<label class="col-sm-2 control-label">院系</label>
+													<div class="col-sm-10">
+													  <p class="form-control-static"><a href="#fakelink">水利水电工程系</a></p>
+													</div>
+												</div><div class="form-group">
+													<label class="col-sm-2 control-label">学号</label>
+													<div class="col-sm-10">
+													  <p class="form-control-static">{{ u.num }}</p>
+													</div>
+												</div><!-- /.form-group -->
+												<div class="form-group">
+													<label class="col-sm-2 control-label">关于我</label>
+													<div class="col-sm-10">
+													  <p class="form-control-static">
+														{{ u.describe }}
+													  </p>
+													</div>
+												</div><!-- /.form-group -->
+
+												</form>
+											</div><!-- /#panel-about -->
+
+										</div><!-- /.tab-content -->
+									</div><!-- /.panel-body -->
+								</div><!-- /.collapse in -->
+							</div><!-- /.panel .panel-success -->
+
+						</div><!-- /.col-md-8 -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+    function showtime() {
+      var now = new Date();
+      var year = now.getYear(); //年
+      var month = now.getMonth() + 1;  //月
+      var date = now.getDate();     //日
+      var hours = now.getHours();   //小时
+      var minutes = now.getMinutes();  //分
+      var seconds = now.getSeconds();  //秒
+      var day = now.getDay();
+      Day = new Array(7);
+      Day[0]="星期天";
+      Day[1]="星期一";
+      Day[2]="星期二";
+      Day[3]="星期三";
+      Day[4]="星期四";
+      Day[5]="星期五";
+      Day[6]="星期六";
+      var timeValue = "";
+
+      timeValue += ((month < 10) ? "0" : "") + month + "月";
+      timeValue += ((date < 10) ? "0" : "") + date + "日 ";
+      timeValue += (Day[day]) + " ";
+      timeValue += ((hours <= 12) ? hours : hours - 12);
+      timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+      timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+      timeValue += (hours < 12) ? "上午" : "下午";
+      document.getElementById('nowtime').innerHTML = timeValue;
+      setTimeout("showtime()",1000);
+  }
+  setTimeout("showtime()",1000);
+//-->
+</SCRIPT>
+						<div class="col-md-4">
+
+							<!-- BEGIN WEATHER WIDGET 4 -->
+							<div class="the-box no-border full text-center">
+								<div class="the-box no-border bg-warning no-margin">
+									<canvas id="sleet" width="140" height="140"></canvas>
+									<h1 class="bolded less-distance">loading...<i class="wi-degrees"></i></h1>
+									<h4>雨天，我们就可以换来蓝天</h4>
+								</div><!-- /.the-box no-border bg-warning no-margin -->
+								<div class="the-box no-border no-margin">
+									<h4 class="bolded less-distance">北京,海淀</h4>
+									<p class="small text-muted" id="nowtime">loading...</p>
+								</div><!-- /.the-box no-border no-margin -->
+							</div><!-- /.the-box .no-border .full -->
+							<!-- END WEATHER WIDGET 4 -->
+
+							<!-- BEGIN REMINDER WIDGET -->
+							<div class="the-box no-border full">
+								<div class="the-box no-border bg-danger no-margin">
+								<h4>我的活动</h4>
+								<hr />
+									<div id="tiles-slide-1" class="owl-carousel my-reminder">
+									  <div class="item full text-left">
+										<p>
+										每天，给自己一个好心情。
+										</p>
+										<p class="small">致可爱的你</p>
+									  </div>
+									  <div class="item full">
+                                            {% for j in jm %}
+										<p>
+										{{ j.project }}
+										</p>
+										<p class="small">{{ j.describe  }}</p>
+                                          {% endfor %}
+									  </div>
+
+									</div><!-- /#tiles-slide-1 -->
+								</div><!-- /.the-box no-border bg-danger no-margin -->
+							</div><!-- /.the-box .no-border .full -->
+							<!-- END REMINDER WIDGET -->
+						</div><!-- /.col-md-4 -->
+					</div><!-- /.row -->
+
+
+
+
+				</div><!-- /.container-fluid -->
+
+
+
+				<!-- BEGIN FOOTER -->
+				<footer>
+					&copy; 2015 <a href="#fakelink">清华大学水利水电工程系学生科学技术协会</a><br />
+				</footer>
+				<!-- END FOOTER -->
+
+
+			</div><!-- /.page-content -->
+		</div><!-- /.wrapper -->
+		<!-- END PAGE CONTENT -->
+ {% endblock %}
+</body>
