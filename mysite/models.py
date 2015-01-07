@@ -76,6 +76,9 @@ class JoinMe(models.Model):
     class Meta:
         ordering = ['-project']
 
+    def __unicode__(self):
+        return self.project
+
 
 class Activities(models.Model):
     title = models.CharField(max_length=50)
