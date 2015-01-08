@@ -1,7 +1,7 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from mysite.models import Book, Content, RContent, Center, JoinMe, Activities, User
 from django.shortcuts import render_to_response
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.views.decorators.csrf import csrf_exempt
 from mysite.forms import ContactForm
 import datetime
@@ -109,9 +109,11 @@ def contact(request):
 @csrf_exempt
 def contactus(request):
     if request.method == 'POST':
-        message = request.POST['fromemail'] + "  " + request.POST['content']
-
-        send_mail(request.POST['subject'], message, '654543782@qq.com', ['shuilikexie@163.com'], fail_silently=False)
+        subject, from_email, to = request.POST['subject'], '654543782@qq.com', 'shuilikexie@163.com'
+        html_content = request.POST['fromemail'] + "  " + request.POST['content']
+        msg = EmailMultiAlternatives(subject, html_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
         return render_to_response('sendfeedback.html')
     else:
         return render_to_response('contactus.html')
